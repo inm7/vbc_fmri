@@ -21,7 +21,7 @@ From: debian:stretch-slim
     apt-get -y install ants
 
     # FSL
-    apt-get -y install fsl-complete
+    apt-get -y install fsl-core fsl-atlases
 
     # AFNI
     apt-get -y install afni
