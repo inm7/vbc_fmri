@@ -7,13 +7,6 @@ From: debian:stretch-slim
 
 %environment
     export LC_ALL=C
-    # export ANTSPATH=/usr/lib/ants
-    # export PATH=${PATH}:/usr/lib/ants
-    # source /etc/fsl/fsl.sh
-    # source /etc/afni/afni.sh
-    # export FREESURFER_HOME=/opt/freesurfer
-    # source $FREESURFER_HOME/SetUpFreeSurfer.sh
-    # export SUBJECTS_DIR=/opt/freesurfer/subjects
 
 %post
     apt-get update && apt-get -y -V upgrade
@@ -22,45 +15,19 @@ From: debian:stretch-slim
     # NeuroDebian
     curl http://neuro.debian.net/lists/stretch.de-md.full -o /etc/apt/sources.list.d/neurodebian.sources.list
     apt-key adv --recv-keys --keyserver hkp://pool.sks-keyservers.net:80 0xA5D32F012649A5A9
-    # curl http://neuro.debian.net/lists/buster.de-fzj.full -o /etc/apt/sources.list.d/neurodebian.sources.list
-    # apt-key adv --recv-keys --keyserver hkp://pool.sks-keyservers.net:80 0xA5D32F012649A5A9
     apt-get update
-
-    # IPSY
-    # printf "deb http://kumo.ovgu.de/debian buster main\n" > /etc/apt/sources.list.d/ipsy.sources.list
-    # curl http://kumo.ovgu.de/debian/ipsy_apt.gpg.key | apt-key add -
-    # apt-get update
-
-    # TODO: remove conda mrtrix install method https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=961051
-    # Conda
-    # curl https://repo.anaconda.com/pkgs/misc/gpgkeys/anaconda.asc | apt-key add -
-    # printf "deb https://repo.anaconda.com/pkgs/misc/debrepo/conda stable main\n" > /etc/apt/sources.list.d/conda.list
-
-    # apt-get update && apt-get -y install conda
-
-    # mrtrix3
-    # . /opt/conda/etc/profile.d/conda.sh
-    # conda install -c mrtrix3 mrtrix3
-
-    # FSL, ANTs, and FreeSurfer
-    # apt-get -y install fsl-complete ants ipsy-freesurfer-6.0
-    # apt-get update
 
     # ANTs
     apt-get -y install ants
-    apt-get update
 
     # FSL
     apt-get -y install fsl-complete
-    apt-get update
 
     # AFNI
     apt-get -y install afni
-    apt-get update
 
     # Workbench
     apt-get -y install connectome-workbench
-    apt-get update
 
     # cleanup
     apt-get autoremove
@@ -72,14 +39,6 @@ From: debian:stretch-slim
     eval "export PATH=${PATH}:/usr/lib/ants"
     eval "source /etc/fsl/fsl.sh"
     eval "source /etc/afni/afni.sh"
-    # export FREESURFER_HOME=/opt/freesurfer
-    # source $FREESURFER_HOME/SetUpFreeSurfer.sh
-    # export SUBJECTS_DIR=/opt/freesurfer/subjects
-
-    
-    # uname -a
-    # echo "Arguments received: $*"
-    # exec echo "$@"
 
 %labels
     Author Kyesam Jung (k.jung@fz-juelich.de)
