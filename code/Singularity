@@ -42,8 +42,7 @@ From: debian:stretch-slim
 
 %labels
     Author Kyesam Jung (k.jung@fz-juelich.de)
-    Version v0.0.0 - Install AFNI (5 Nov. 2020)
-    Version v0.0.1 - Install FSL, AFNI, ANTs, and Workbench (6 Nov. 2020)
+    Version 0.0.1
 
 %help
     This pipeline is based on a proof-of-concept container for VBC pipelines (Alex Waite, v0.4.0).
