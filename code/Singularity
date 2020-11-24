@@ -1,9 +1,9 @@
 Bootstrap: docker
 From: debian:stretch-slim
 
-%files
+%setup
     # install your pipeline script into /usr/local/bin
-    /local/path/to/pipelines/scripts/*sh /usr/local/bin
+    install -m 755 ./code/* ${SINGULARITY_ROOTFS}/usr/local/bin
 
 %environment
     export LC_ALL=C
